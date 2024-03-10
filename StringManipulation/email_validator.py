@@ -1,13 +1,15 @@
 import re
 
+# Function to validate email
 def validate_email(email):
-    standardemail = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+    # Regular expression to validate a standard email
+    standardEmail = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
     
-    if standardemail.match(email): return True
+    if standardEmail.match(email): return True
     else: return False
     
-  #Test cases
-print(validate_email('joao.oliveira2@exampl@e.pt'))
-print(validate_email('@fakemail.com'))
-print(validate_email('joao.oliveira2example.pt'))
-print(validate_email('joao.oliveira2@examplept'))
+#Test cases
+print(validate_email('joao.oliveira2@example.pt'))#True
+print(validate_email('@fakemail.com'))#False
+print(validate_email('joao.oliveira2example.pt'))#False
+print(validate_email('joao.oliveira2@examplept'))#False
